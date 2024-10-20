@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Vishal Dubey</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your EmailJS User ID
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">VISHAL DUBEY</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="dark-mode-btn" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <button type="submit" class="send-button">Send Message</button>
+    </form>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dark-mode.js"></script>
+
+  <!-- EmailJS Submission Script -->
+  <script type="text/javascript">
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting the default way
+
+      emailjs.sendForm('service_hl4tg33', 'X-Ngf3ySu6Xh0cMQbZv79', this)
+        .then(function() {
+          alert('Message Sent!'); // Alert success message
+        }, function(error) {
+          alert('Failed to send message. Please try again.');
+        });
+    });
+  </script>
+</body>
+</html>

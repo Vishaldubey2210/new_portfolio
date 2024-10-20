@@ -1,0 +1,22 @@
+body.dark-mode {
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+  }
+  
+  .dark-mode .nav {
+    background-color: #3c3c3c;
+  }
+  
+  .dark-mode .main-content h1,
+  .dark-mode .main-content p {
+    color: #f5f5f5;
+  }
+  
+  .dark-mode .social-buttons a {
+    background-color: #999;
+  }
+  
+  .dark-mode .social-buttons a:hover {
+    background-color: #ccc;
+  }
+  
